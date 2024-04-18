@@ -27,7 +27,9 @@ function UserProfileManager() {
         },
 
         removeUser(userId) {
-            const users = this.users.filter((user) => user.id !== userId);
+            const usersId = this.users.map((user) => user.id)
+            const index = usersId.indexOf(userId)
+            const users = this.users.splice(index, 1)
             return users;
         },
 
